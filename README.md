@@ -1,9 +1,12 @@
 Website đơn giản xây dựng bằng mô hình MVC.
 Chủ đề website: Blog
 Các chức năng: Danh sách bài viết, tìm kiếm, đăng ký, đăng nhập, viết bài mới, chỉnh sửa bài viết.
+(Website chưa có chức năng phân trang và lọc bỏ sql injection)
 
 Tác giả: Võ Văn Khoa
+
 Email: khoazero123@gmail.com
+
 Demo: http://sub-khoazero123.rhcloud.com
 
 Hưỡng dẫn sử dụng framework: 
