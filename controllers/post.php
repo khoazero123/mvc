@@ -2,7 +2,7 @@
 class Post extends Controller {
 	private $post_model;
 	function __construct() {
-		require ('models/post_model.php');
+		require (__DIR__ .'/../models/post_model.php');
 		$this->post_model = new Post_model;
 	}
 	public function write() {
@@ -18,7 +18,7 @@ class Post extends Controller {
 				$data['post']['title'] = $post_title;
 				$data['post']['thumbnail'] = $post_thumbnail;
 				$data['post']['content'] = $post_content;
-				
+				$data['post']['time'] = gmdate("Y-m-d H:i:s",time() + 7 * 3600);
 				if(!isset($_POST['id'])) {
 					if($id=$this->post_model->write($data['post'])) {
 						//var_dump($id);
@@ -29,6 +29,7 @@ class Post extends Controller {
 				} else {
 					$id = $_POST['id'];
 					$data['post']['id'] = $id;
+					$data['post']['time'] = gmdate("Y-m-d H:i:s",time() + 7 * 3600);
 					$data['title'] = $post_title;
 					if($q=$this->post_model->update($data['post'],'post',"id=$id")) {
 						//var_dump($q);

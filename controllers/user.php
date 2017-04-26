@@ -34,8 +34,8 @@ class User extends Controller {
 			elseif(empty($_REQUEST['password'])) $data['error'] = 'Vui lòng nhập password';
 			else {
 				//var_dump($user->findUsername($_REQUEST['username']));return;
-				if(!$this->$user_model->findUsername($_REQUEST['username'])) $data['error'] = 'Người dùng không tồn tại';
-				elseif($user_info=$this->$user_model->login(['username'=>$_REQUEST['username'],'password'=>$_REQUEST['password']])) {
+				if(!$this->user_model->findUsername($_REQUEST['username'])) $data['error'] = 'Người dùng không tồn tại';
+				elseif($user_info=$this->user_model->login(['username'=>$_REQUEST['username'],'password'=>$_REQUEST['password']])) {
 					setcookie('user',$user_info['user_id'],time()+3600,'/');
 					$data['info'] = 'Đăng nhập thành công<br/>Sẽ chuyển hướng trong chốc lát';
 					$data['redirect'] = './';

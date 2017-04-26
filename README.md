@@ -5,11 +5,13 @@
  Các chức năng: Danh sách bài viết, tìm kiếm, đăng ký, đăng nhập, viết bài mới, chỉnh sửa bài viết.
  Tác giả: Võ Văn Khoa
  Email: khoazero123@gmail.com
+ Demo: http://sub-khoazero123.rhcloud.com
 
- Hưỡng dẫn sử dụng framework:
+ Hưỡng dẫn sử dụng framework: 
 
  Thiết lập đường dẫn ứng dụng và thông tin cơ sở dữ liệu nằm trong file config.php
  Tiến hành import CSDL mẫu từ file mvc.sql.zip vào CSDL
+ Các file css, js, image được đặt ở trong thư mục public
  
  Mọi request từ người dùng sẽ được xử lý bởi file index.php, từ file này dựa theo 2 tham số chính $_REQUEST['c'] và $_REQUEST['a'] sẽ diều hướng tới file xử lý của Controller đó.
 

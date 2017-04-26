@@ -3,9 +3,12 @@ class Database {
 	public $db;
 	public function __construct() {
 		global $cfg;
-		$this->db = new mysqli($cfg['db']['host'],$cfg['db']['user'],$cfg['db']['pass'],$cfg['db']['dbname']);
-		$this->db->set_charset("utf8");
-		return $this->db;
+		if($this->db = new mysqli($cfg['db']['host'],$cfg['db']['user'],$cfg['db']['pass'],$cfg['db']['dbname'])) {
+			$this->db->set_charset("utf8");
+			return $this->db;
+		} else {
+			die('Không thể kết nối đến CSDL');
+		}
 	} 
 	public function query($sql) {
 		return $this->db->query($sql);

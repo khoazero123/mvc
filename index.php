@@ -1,6 +1,6 @@
 <?php 
 require 'config.php';
-require 'core/Controller.php';
+require 'core/controller.php';
 
 define('USER',isset($_COOKIE['user']) ? $_COOKIE['user'] : false);
 
