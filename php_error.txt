@@ -1,2 +1,0 @@
-[26-Apr-2017 15:44:20 Europe/Berlin] PHP Notice:  Undefined variable: user_model in D:\www\mvc\controllers\user.php on line 37
-[26-Apr-2017 15:44:20 Europe/Berlin] PHP Fatal error:  Cannot access empty property in D:\www\mvc\controllers\user.php on line 37
