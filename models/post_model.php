@@ -6,23 +6,19 @@ class Post_model {
 		$this->db = new Database;
 	}
 	public function showListPost($limit=0,$offset=0) {
-		//$db = new Database;
 		$sql = "SELECT * FROM post";
 		if($limit>0) {
-			$sql .= "LIMIT $offset, $limit";
+			$sql .= " LIMIT $offset, $limit";
 		}
+		//return $sql;
 		return $this->db->selectAll($sql);
-		//return mysqli_fetch_all($db->query($sql),MYSQLI_ASSOC);
 	}
 	public function search($keyword,$limit=0,$offset=0) {
-		//$db = new Database;
 		$sql = "SELECT * FROM post WHERE title LIKE '%$keyword%' OR content LIKE '%$keyword%'";
 		if($limit>0) {
-			$sql .= "LIMIT $offset, $limit";
+			$sql .= " LIMIT $offset, $limit";
 		}
-		//echo $sql;return;
 		return $this->db->selectAll($sql);
-		//return mysqli_fetch_all($db->query($sql),MYSQLI_ASSOC);
 	}
 	public function show($id) {
 		$sql = "SELECT * FROM post WHERE id='".$id."'";

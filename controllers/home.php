@@ -7,9 +7,18 @@ class Home extends Controller {
 	}
 	public function index() {
 		global $cfg;
-		$list_post = $this->post_model->showListPost();
+		$list_post = $this->post_model->showListPost(5,0);
 		$data = ['title'=>'Danh sách bài viết Home','data'=>$list_post];
 		return $this->view('home',$data);
+	}
+	public function loadmore() {
+		//echo 'aaaaaaaa';
+		$start = isset($_REQUEST['start']) ? (int)$_REQUEST['start'] : 0;
+		global $cfg;
+		$list_post = $this->post_model->showListPost(5,$start);
+		//var_dump($list_post);
+		$data = ['data'=>$list_post];
+		return $this->view('loadmore',$data,false);
 	}
 	public function search() {
 		global $cfg;

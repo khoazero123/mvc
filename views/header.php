@@ -63,6 +63,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              Update tính năng auto load thêm bài viết khi scroll down
+            </div>
       </header>
       <section class="container" style="">
         

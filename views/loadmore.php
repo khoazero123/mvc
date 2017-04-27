@@ -1,10 +1,8 @@
-<h2><?=$title?></h2>
-<div id="posts">
 <?php
-    	if(!empty($data))
+    if(!empty($data))
     	foreach($data as $item) {
     	?>
-    	<div class="row" id="post-<?=$item['id']?>">
+        <div class="row" id="post-<?=$item['id']?>">
                 <div class="row">
                     <div class="span8">
                         <h4><strong><a href="?c=post&a=read&id=<?=$item['id']?>"><?=$item['title']?></a></strong></h4>
@@ -39,7 +37,3 @@
 <?php
 }
 ?>
-</div>
-<p id="loading" style="display: none;text-align: center;">
-    <img src="public/images/ring-alt.svg" alt="Loading…" />
-</p>
